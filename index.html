@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heri ilham Portfolio | SMK Student & Android Enthusiast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #050505; color: white;
+            cursor: none; overflow-x: hidden;
+        }
+
+        #loader {
+            position: fixed; inset: 0; background: #000; z-index: 10000;
+            display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.8s ease;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Cursor System */
+        #cursor {
+            width: 8px; height: 8px; background: #6366f1;
+            border-radius: 50%; position: fixed; pointer-events: none; z-index: 10001;
+        }
+        #cursor-outline {
+            width: 40px; height: 40px; border: 1px solid rgba(99, 102, 241, 0.5);
+            border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000;
+            transition: all 0.2s ease-out;
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .magnetic { display: inline-block; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
+
+        .glass-input {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            width: 100%;
+            outline: none;
+            transition: 0.3s;
+            color: white;
+        }
+        .glass-input:focus { border-color: #6366f1; background: rgba(255,255,255,0.05); }
+
+        /* Smooth Scroll Padding */
+        section { scroll-margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="text-center">
+            <div class="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-indigo-500">System Ready</h2>
+        </div>
+    </div>
+
+    <div id="cursor"></div>
+    <div id="cursor-outline"></div>
+
+    <nav class="fixed top-0 w-full z-[100] p-6 md:p-10 flex justify-between items-center pointer-events-none">
+        <div class="text-2xl font-black tracking-tighter pointer-events-auto">Heri.</div>
+        <div class="glass px-6 py-3 rounded-full flex gap-6 md:gap-10 text-[10px] font-bold uppercase tracking-[0.3em] pointer-events-auto shadow-2xl">
+            <a href="#about" class="hover:text-indigo-500 transition">Profil</a>
+            <a href="#passion" class="hover:text-indigo-500 transition">Passion</a>
+            <a href="#contact" class="hover:text-indigo-500 transition">Kontak</a>
+        </div>
+    </nav>
+
+    <header class="h-screen flex flex-col justify-center px-6 md:px-24 relative overflow-hidden">
+        <div class="reveal">
+            <div class="glass inline-block px-4 py-1 rounded-full text-[10px] font-black tracking-[0.4em] text-indigo-500 mb-6 uppercase">SMK Student | 16 Y.O</div>
+            <h1 class="text-[12vw] md:text-[8vw] font-black leading-[0.8] tracking-tighter mb-8">
+                CRAFTING <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">DIGITAL OPS.</span>
+            </h1>
+            <p class="text-md md:text-xl font-light text-slate-400 max-w-xl mb-10 leading-relaxed">
+                Mengeksplorasi batas performa Android melalui kustomisasi sistem, rooting, dan optimasi kernel.
+            </p>
+            <a href="#about" class="magnetic group relative px-10 py-4 overflow-hidden rounded-full glass font-bold uppercase tracking-widest text-[10px] inline-block">
+                <span class="relative z-10 group-hover:text-black transition duration-300">Kenali Saya</span>
+                <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            </a>
+        </div>
+    </header>
+
+    <section id="about" class="py-32 px-6 md:px-24 bg-[#080808]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h2 class="text-xs font-bold tracking-[0.5em] text-indigo-500 mb-8 uppercase">Background</h2>
+                <h3 class="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Halo, Saya Heri ilham. A. <br> Pelajar SMK.</h3>
+                <p class="text-lg text-slate-400 font-light leading-relaxed mb-6">
+                    Seorang antusias teknologi berusia 16 tahun yang berfokus pada dunia oprek Android. Saya percaya bahwa setiap perangkat memiliki potensi tersembunyi yang bisa dibuka melalui modifikasi yang tepat.
+                </p>
+            </div>
+            <div class="glass p-12 rounded-[3rem] reveal" data-tilt>
+                <h4 class="text-xl font-bold mb-4 italic">The Android Soul</h4>
+                <p class="text-slate-400 font-light leading-relaxed">
+                    Mulai dari instalasi Custom ROM hingga kustomisasi Kernel, saya mendedikasikan waktu saya untuk mempelajari cara kerja sistem operasi ini lebih dalam.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="passion" class="py-32 px-6 md:px-24">
+        <h2 class="text-xs font-bold tracking-[0.5em] text-indigo-500 mb-16 uppercase text-center">Tech Stack</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="glass p-10 rounded-[2.5rem] reveal" data-tilt>
+                <div class="mb-6 text-indigo-500 font-black text-4xl opacity-20">01</div>
+                <h3 class="text-2xl font-bold mb-4">Rooting</h3>
+                <p class="text-sm text-slate-400 font-light">Eksplorasi sistem melalui Magisk dan KernelSU.</p>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] reveal" data-tilt style="transition-delay: 0.1s;">
+                <div class="mb-6 text-purple-500 font-black text-4xl opacity-20">02</div>
+                <h3 class="text-2xl font-bold mb-4">Custom ROM</h3>
+                <p class="text-sm text-slate-400 font-light">Implementasi AOSP/CAF based ROM untuk daily driver.</p>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] reveal" data-tilt style="transition-delay: 0.2s;">
+                <div class="mb-6 text-pink-500 font-black text-4xl opacity-20">03</div>
+                <h3 class="text-2xl font-bold mb-4">Optimasi</h3>
+                <p class="text-sm text-slate-400 font-light">Tuning performa dan efisiensi melalui modul sistem.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6 md:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div class="reveal">
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 italic">Say <br> Hello.</h2>
+                <p class="text-slate-400 mb-12">Punya pertanyaan seputar Android atau sekadar ingin bertegur sapa? Kirimkan pesan kamu!</p>
+                <div class="space-y-4">
+                    <p class="text-xl font-bold text-indigo-500">@kuroya14</p>
+                    <p class="text-xl font-bold opacity-60 italic">Kuroya Team.</p>
+                </div>
+            </div>
+            
+            <div class="glass p-10 rounded-[2.5rem] reveal shadow-2xl border-indigo-500/20">
+                <form action="https://formspree.io/f/mrebqgdv" method="POST" class="space-y-6">
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 mb-2 block">Nama Lengkap</label>
+                        <input type="text" name="name" placeholder="Siapa nama Anda?" class="glass-input" required>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 mb-2 block">Email Pengirim</label>
+                        <input type="email" name="email" placeholder="email@contoh.com" class="glass-input" required>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest font-bold opacity-40 mb-2 block">Isi Pesan</label>
+                        <textarea name="message" rows="4" placeholder="Apa yang ingin dibahas?" class="glass-input" required></textarea>
+                    </div>
+                    <button type="submit" class="magnetic w-full py-4 bg-indigo-600 rounded-xl font-bold hover:bg-indigo-700 transition active:scale-95 shadow-lg shadow-indigo-500/30">
+                        Kirim Sekarang
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-20 text-center opacity-30 text-[10px] font-bold tracking-[0.5em] uppercase">
+        &copy; 2026 Developed by Kuroya Team • Built with Passion
+    </footer>
+
+    <script>
+        // Smooth Scroll Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Cursor Interaction
+        const cursor = document.getElementById('cursor');
+        const outline = document.getElementById('cursor-outline');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+            outline.animate({
+                left: `${e.clientX - 20}px`,
+                top: `${e.clientY - 20}px`
+            }, { duration: 400, fill: "forwards" });
+        });
+
+        // Hover Effect
+        document.querySelectorAll('a, button, .glass, input, textarea').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                outline.style.transform = 'scale(1.5)';
+                outline.style.background = 'rgba(99, 102, 241, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                outline.style.transform = 'scale(1)';
+                outline.style.background = 'transparent';
+            });
+        });
+
+        // Magnetic Physics
+        document.querySelectorAll('.magnetic').forEach(el => {
+            el.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                this.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            el.addEventListener('mouseleave', function() {
+                this.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // Reveal Observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Initial Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 800);
+        });
+
+        // Init Tilt Effect
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 5,
+            speed: 800,
+            glare: true,
+            "max-glare": 0.1,
+        });
+    </script>
+</body>
+</html>
